@@ -66,7 +66,7 @@ Lalu menyimpan waktu sekarang di timeStrB
 ```
 Lalu mengubah after_time sesuai dengan input parameter
 ```c
-	if (strcmp(mi,"*")==0);
+    if (strcmp(mi,"*")==0);
         else after_time->tm_min += atoi(mi) ;
     if (strcmp(h,"*")==0);
         else after_time->tm_hour += atoi(h);
@@ -85,7 +85,7 @@ Lalu menyimpan hasil waktu yang sudah diubah di timeStrA
 ```
 Selama timeStrB dan timeStrA tidak sama, akan dilakukan sleep selama 1 menit
 ```c
-	while (strcmp(timeStrA,timeStrB)!=0){
+    while (strcmp(timeStrA,timeStrB)!=0){
         sleep(1);
     } 
 ```
@@ -146,7 +146,7 @@ int main() {
 ```
 Menggunakan daemon, di dalam while(1) setiap membaca baris yang ada di crontab.data maka void *timer akan dijalankan. 
 ```c
-	while (fscanf(input, "%c %c %c %c %c %c",&file,&i,&h,&d,&o,&w) == 1){
+    while (fscanf(input, "%c %c %c %c %c %c",&file,&i,&h,&d,&o,&w) == 1){
         //pthread_create(&(threads[i]), NULL, timer, &file,&i,&h,&d,&o,&w);
 		timer(file,i,h,d,o,w);
         i++;
@@ -154,7 +154,7 @@ Menggunakan daemon, di dalam while(1) setiap membaca baris yang ada di crontab.d
 ```
 Untuk membaca input dari file menggunakan FILE dan sebagai berikut
 ```c
-	FILE *input = fopen("crontab.data","r");
+    FILE *input = fopen("crontab.data","r");
     char file, i, h, d, o, w;
 
     if (input == NULL){
